@@ -1,4 +1,7 @@
-<h4><%= @product.name %></h4>
-<%= image_tag "raspberries.png" %>
-<p>Price: $<%= @product.price %></p>
-<p><%= @product.description %></p>
+<div class="col-md-4">
+  <h4><%= @product.name %></h4>
+  <%= image_tag "raspberries.png" %>
+  <p>Price: $<%= @product.price %></p>
+  <p><%= @product.description %></p>
+  <p><%= link_to "Collapse" %></p>
+</div>

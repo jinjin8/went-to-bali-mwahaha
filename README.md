@@ -6,4 +6,16 @@ To set up:
 
 * `rake db:setup`
 
-* Sorry, didn't get around to tests. It mostly works. There might be a few bugs.
+
+Required AJAX tasks:
+1. AJAX applied to adding items & updating total number of items on index page.
+2. AJAX applied to show&hide product details; product detail includes an image.
+3. AJAX applied to deleting items from the shopping cart & updating total price.
+
+Refactored & tested:
+1. Ensure that users can't order a negative number of items.
+2. Add flash messages for signing up, signing in and signing out.
+3. Add validations to all models.
+4. Fix the row height for products.
+
+5. Add further AJAX functionality where it might be useful.

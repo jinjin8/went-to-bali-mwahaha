@@ -7,15 +7,11 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body>
-    <div class="container">
-      <div class="jumbotron">
-        <h1>Welcome</h1>
-      </div>
-      <header class="navbar navbar">
-        <ul class="nav navbar nav">
-          <li><%= link_to "Cart | Total items: #{ cart_items }", cart_path %></li>
-          <li><%= link_to "See all products", products_path %></li>
+  <nav>
+    <div class="nav-wrapper">
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><%= link_to "Cart | Total items: #{ cart_items }", cart_path %></li>
+        <li><%= link_to "See all products", products_path %></li>
         <% if current_user %>
           <li><%= current_user.email %></li>
           <li><%= link_to "Sign out", '/sign_out' %></li>
@@ -23,16 +19,16 @@
           <li><%= link_to "Sign up", 'sign_up' %></li>
           <li><%= link_to "Sign in", '/sign_in' %></li>
         <% end %>
-        </ul>
-      </header>
+      </ul>
     </div>
+  </nav>
 
-    <div class="content-wrapper">
-      <div class="container">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-        <%= yield %>
-      </div>
+  <body>
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, id: "flash_#{name}" %>
+    <% end %>
+    <div class="container">
+      <%= yield %>
     </div>
   </body>
 </html>

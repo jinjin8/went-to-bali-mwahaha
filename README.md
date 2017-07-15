@@ -1,12 +1,27 @@
-# README
+# E-Commerce
 
-E-commerce site. Uses `bcrypt` and `materialize`. There's a seed file. Set up your own admin. If you have questions, I'll be in Bali with no email. Ask someone else.
+### Description
+This app was created to meet specifications to refactor an existing app as a third Ruby on Rails independent project at Epicodus. It uses bcrypt to allow users to create an account and admin authentication for maintaining the site. All data dynamically persists via Postgres with ActiveRecord.
 
-To set up:
+### Requirements
+  * Ruby
+  * Rails
+  * ActiveRecord
+  * Postgres
 
-* `rake db:setup`
+### Setup
 
+  * `git clone https://github.com/jinjin8/went-to-bali-mwahaha`
+  * `cd went-to-bali-mwahaha`
+  * `bundle install`
+  * Start Postgres server
+  * `rake db:create`
+  * `rake db:migrate`
+  * `rake db:seed` to populate the site
+  * `rails s`
+  * Open browser and navigate to http://localhost:3000/
 
+### Specifications:
 Required AJAX tasks:
 1. AJAX applied to adding items & updating total number of items on index page.
 2. AJAX applied to show&hide product details; product detail includes an image.
@@ -19,3 +34,21 @@ Refactored & tested:
 4. Fix row height for products.
 5. Add product update and delete functionality for admins.
 6. Add further AJAX functionality to Admin CRUD.
+
+### Technologies Used
+  * HTML
+  * CSS, Bootstrap, SASS Materialize
+  * JavaScript
+  * Ruby
+  * Rails
+  * Faker
+  * Postgres
+  * PSQL
+  * ActiveRecord
+  * bcrypt
+
+### Support and contact details
+  _jincamou@gmail.com_
+
+### License
+  _MIT_ &copy; _2017_ **jin camou**

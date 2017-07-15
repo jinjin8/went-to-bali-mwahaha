@@ -1,0 +1,13 @@
+<%= render "layouts/errors", :object => @product %>
+<h4>New product:</h4>
+<%= form_for @product, remote: true do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.label :image %>
+  <%= f.text_field :image %>
+  <%= f.label :price %>
+  <%= f.number_field :price %>
+  <%= f.submit "Submit" %>
+<% end %>

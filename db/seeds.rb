@@ -1,5 +1,13 @@
 class Seed
 
+  authorized_admin = [
+    ["Admin", "admin@admin.com", "adminpass"],
+  ]
+
+  authorized_admin.each do |name, email, password|
+    User.create(name: name, email: email, password: password, admin: true)
+  end
+
   def self.begin
     seed = Seed.new
     seed.generate_products
@@ -12,4 +20,7 @@ class Seed
   end
 end
 
+
 Seed.begin
+p "Created #{Product.count} products"
+p "Created #{User.count} admin"

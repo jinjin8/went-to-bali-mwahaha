@@ -16,6 +16,6 @@ Refactored & tested:
 1. Ensure that users can't order a negative number of items.
 2. Add flash messages for signing up, signing in and signing out.
 3. Add validations to all models.
-4. Fix the row height for products.
-
-5. Add further AJAX functionality where it might be useful.
+4. Fix row height for products.
+5. Add product update and delete functionality for admins.
+6. Add further AJAX functionality to Admin CRUD.

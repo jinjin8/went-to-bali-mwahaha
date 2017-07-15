@@ -1,3 +1,14 @@
+<br>
+<% if current_user %>
+  <% if current_user.admin === true %>
+    <p>Hello Admin! </p>
+    <%= link_to "Add a New Product", new_product_path, id:"product_form", remote: true %>
+  <% end %>
+<% end %>
+
+<br>
+<div id="product_form">
+</div>
 <h3>Products</h3>
 <hr>
 <div id="product_detail">
@@ -7,10 +18,9 @@
   <% @products.each do |product| %>
     <div class="col s4">
       <h4><%= link_to product.name, product_path(product), remote: true %></h4>
-
       <%= form_for @order_item, remote: true do |f| %>
         <%= f.hidden_field :product_id, value: product.id %>
-        <%= f.number_field :quantity, placeholder: "Quantity" %>
+        <%= f.number_field :quantity, placeholder: "Quantity", min: 1 %>
         <span class="waves-effect waves-light btn"><%= f.submit "Add to cart" %></span>
       <% end %>
     </div>
